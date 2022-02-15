@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 
 from words import words
 
@@ -81,15 +82,23 @@ class InstalingLogIn:
                 translete_words = self.driver.find_element(By.CLASS_NAME, 'translations')
                 word = words.get(translete_words.text)
 
-                self.translation_input.send_keys(word)
-                sleep(4)
+                try:
+                    self.driver.find_element(By.ID, 'dont_know_new').click()
 
-                self.send_answer.click()
-                print(f'To było {num_words} słówko.')
-                sleep(4)
+                    sleep(0.5)
 
-                self.next_word.click()
-                sleep(1.5)
+                    self.driver.find_element(By.ID, 'skip').click()
+
+                except:
+                    self.translation_input.send_keys(word)
+                    sleep(2)
+
+                    self.send_answer.click()
+                    print(f'To było {num_words} słówko.')
+                    sleep(2)
+
+                    self.next_word.click()
+                    sleep(2)
 
                 num_words += 1
 
@@ -103,4 +112,5 @@ class InstalingLogIn:
 
             finally:
                 sleep(2)
+                print('\n\tGratulacje ! Dzisiejsza sesja wykonana !\n')
                 self.driver.quit()
