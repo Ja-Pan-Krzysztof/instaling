@@ -1,6 +1,5 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 
 from words import words
 
@@ -19,6 +18,8 @@ class InstalingLogIn:
 
         self._parameters()
         self._account_log_in()
+
+        self.new_word_list = []
 
     def _parameters(self):
         print('Loading... _parameters()')
@@ -57,16 +58,16 @@ class InstalingLogIn:
         if self.driver.current_url != current_url:
             try:
                 self.driver.find_element(By.ID, 'start_session_button').click()
-                sleep(2)
+                sleep(3)
                 self._solving_words()
 
             except:
                 self.driver.find_element(By.ID, 'continue_session_button').click()
-                sleep(2)
+                sleep(3)
                 self._solving_words()
 
         else:
-            sleep(2)
+            sleep(3)
             self.driver.quit()
 
     def _solving_words(self):
@@ -82,23 +83,29 @@ class InstalingLogIn:
                 translete_words = self.driver.find_element(By.CLASS_NAME, 'translations')
                 word = words.get(translete_words.text)
 
+                '''if word is None:
+                    new_word = str(input('Podaj odpowiedź : '))
+                    self.new_word_list.append(f'{translete_words}: {new_word}')
+
+                    word = new_word'''
+
                 try:
                     self.driver.find_element(By.ID, 'dont_know_new').click()
 
-                    sleep(0.5)
+                    sleep(3)
 
                     self.driver.find_element(By.ID, 'skip').click()
 
                 except:
                     self.translation_input.send_keys(word)
-                    sleep(2)
+                    sleep(3)
 
                     self.send_answer.click()
                     print(f'To było {num_words} słówko.')
-                    sleep(2)
+                    sleep(3)
 
                     self.next_word.click()
-                    sleep(2)
+                    sleep(3)
 
                 num_words += 1
 
@@ -113,4 +120,8 @@ class InstalingLogIn:
             finally:
                 sleep(2)
                 print('\n\tGratulacje ! Dzisiejsza sesja wykonana !\n')
+
+                print('Nowe słówka : \n')
+                for i in self.new_word_list:
+                    print(i)
                 self.driver.quit()
