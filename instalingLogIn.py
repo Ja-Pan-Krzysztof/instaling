@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from words import words
 
 from time import sleep
+from random import randrange, random
 
 
 class InstalingLogIn:
@@ -20,6 +21,10 @@ class InstalingLogIn:
         self._account_log_in()
 
         self.new_word_list = []
+
+    @staticmethod
+    def num():
+        return random()
 
     def _parameters(self):
         print('Loading... _parameters()')
@@ -58,16 +63,14 @@ class InstalingLogIn:
         if self.driver.current_url != current_url:
             try:
                 self.driver.find_element(By.ID, 'start_session_button').click()
-                sleep(3)
                 self._solving_words()
 
             except:
                 self.driver.find_element(By.ID, 'continue_session_button').click()
-                sleep(3)
                 self._solving_words()
 
         else:
-            sleep(3)
+            sleep(randrange(1, 5))
             self.driver.quit()
 
     def _solving_words(self):
@@ -92,20 +95,22 @@ class InstalingLogIn:
                 try:
                     self.driver.find_element(By.ID, 'dont_know_new').click()
 
-                    sleep(3)
+                    sleep(self.num())
 
                     self.driver.find_element(By.ID, 'skip').click()
 
                 except:
+                    sleep(randrange(1, 4))
                     self.translation_input.send_keys(word)
-                    sleep(3)
+
+                    sleep(random())
 
                     self.send_answer.click()
                     print(f'To było {num_words} słówko.')
-                    sleep(3)
+                    sleep(self.num())
 
                     self.next_word.click()
-                    sleep(3)
+                    sleep(self.num())
 
                 num_words += 1
 
@@ -114,14 +119,11 @@ class InstalingLogIn:
                 self.driver.find_element(By.ID, 'return_mainpage').click()
 
             except:
-                sleep(200)
+                sleep(self.num())
                 print('Coś nie poszło')
 
             finally:
-                sleep(2)
+                sleep(self.num())
                 print('\n\tGratulacje ! Dzisiejsza sesja wykonana !\n')
 
-                print('Nowe słówka : \n')
-                for i in self.new_word_list:
-                    print(i)
                 self.driver.quit()
