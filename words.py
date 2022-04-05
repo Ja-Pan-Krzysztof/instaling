@@ -36,5 +36,9 @@ words = {
     'opuszczać; zaniechać; rezygnować': 'abandon',
     'koczowniczy; wędrowny': 'nomadic',
     'kołek, pal, szczudło': 'stilt',
-    'górniczy': 'mining'
+    'górniczy': 'mining',
+    'góra': 'mountain',
+    'wulkan': 'volcano',
+    'przyciągać; zachwycać': 'attract',
+    'plemię; szczep': 'tribe'
 }
