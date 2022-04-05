@@ -1,3 +1,4 @@
+#!E:\Python\..Python_venv\instaling\Scripts\python
 from dotenv import load_dotenv
 from os import getenv
 

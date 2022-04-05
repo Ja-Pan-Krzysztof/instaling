@@ -12,8 +12,8 @@ logger = logging.getLogger(__name__)
 
 
 class InstalingLogIn:
-    _PATH = 'E:/Python/..Python_venv/chromedriver.exe'
-    _DRIVER = webdriver.Chrome(_PATH)
+    _PATH = r'E:/Python/..Python_venv/geckodriver.exe'
+    _DRIVER = webdriver.Firefox(executable_path=_PATH)
     _DRIVER.get('https://instaling.pl/teacher.php?page=login')
 
     def __init__(self, username, password):
@@ -85,7 +85,7 @@ class InstalingLogIn:
             self.driver.quit()
 
     def _solving_words(self):
-        logger.info('Loading... [ _solving_words() ]')
+        #logger.info('Loading... [ _solving_words() ]')
         num_words = 1
 
         self.translation_input = self.driver.find_element(By.ID, 'answer')
@@ -95,13 +95,6 @@ class InstalingLogIn:
         try:
             while True:
                 logger.info('Loop [ Try | While True ]')
-
-                '''if word is None:
-                    new_word = str(input('Podaj odpowiedź : '))
-                    self.new_word_list.append(f'{translete_words}: {new_word}')
-
-                    word = new_word'''
-
                 try:
                     logger.info('Loop [ Try | While True | Try ]')
                     self.driver.find_element(By.ID, 'dont_know_new').click()
@@ -116,6 +109,12 @@ class InstalingLogIn:
                     sleep(self.num())
                     translete_words = self.driver.find_element(By.CLASS_NAME, 'translations')
                     word = words.get(translete_words.text)
+
+                    if word is None:
+                        new_word = str(input('Podaj odpowiedź : '))
+                        self.new_word_list.append(f'{translete_words}: {new_word}')
+
+                        word = new_word
 
                     sleep(randrange(1, 4))
                     self.translation_input.send_keys(word)
@@ -145,5 +144,6 @@ class InstalingLogIn:
                 logger.info('not Loop [ Except | Finally ]')
                 sleep(self.num())
                 print('\n\tGratulacje ! Dzisiejsza sesja wykonana !\n')
+                print(self.new_word_list)
 
                 self.driver.quit()
