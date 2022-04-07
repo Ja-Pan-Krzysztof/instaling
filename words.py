@@ -40,5 +40,7 @@ words = {
     'góra': 'mountain',
     'wulkan': 'volcano',
     'przyciągać; zachwycać': 'attract',
-    'plemię; szczep': 'tribe'
+    'plemię; szczep': 'tribe',
+    'wielbłąd': 'camel',
+    'krater; lej': 'crater'
 }
