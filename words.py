@@ -63,5 +63,7 @@ words = {
     'pamiątka': 'souvenir',
     'zostawać w domu; siedzieć w domu': 'stay in',
     'wydostać się z': 'get away from',
-    'muszla; łupina; skorupa': 'shell'
+    'muszla; łupina; skorupa': 'shell',
+    'przychodzić; odwiedzać': 'come around',
+    'naprawdę': 'really'
 }
