@@ -42,5 +42,17 @@ words = {
     'przyciągać; zachwycać': 'attract',
     'plemię; szczep': 'tribe',
     'wielbłąd': 'camel',
-    'krater; lej': 'crater'
+    'krater; lej': 'crater',
+    'krajobraz; pejzaż': 'landscape',
+    'wykształcić umiejętność widzenia pod wodą': 'develop underwater vision',
+    'elektryczność': 'electricity',
+    'jaskinia; pieczara': 'cave',
+    'gęsty; spoisty; tępawy': 'dense',
+    'zapierający dech': 'breathtaking',
+    'cel wycieczek turystycznych': 'tourist destination',
+    'robiący wrażenie; imponujący': 'impressive',
+    'suchy': 'dry',
+    'zaludnienie; ludność, populacja': 'population'
+
+
 }
