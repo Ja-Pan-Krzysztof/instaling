@@ -52,7 +52,16 @@ words = {
     'cel wycieczek turystycznych': 'tourist destination',
     'robiący wrażenie; imponujący': 'impressive',
     'suchy': 'dry',
-    'zaludnienie; ludność, populacja': 'population'
-
-
+    'zaludnienie; ludność, populacja': 'population',
+    'pustynia': 'desert',
+    'dawny; stary; starożytny': 'ancient',
+    'wyspa': 'island',
+    'ruina; gruzy': 'ruin',
+    'lampa': 'lamp',
+    'nie wpuszczać kogoś': 'keep somebody out',
+    'wpuścić kogoś do środka': 'let somebody in',
+    'pamiątka': 'souvenir',
+    'zostawać w domu; siedzieć w domu': 'stay in',
+    'wydostać się z': 'get away from',
+    'muszla; łupina; skorupa': 'shell'
 }
