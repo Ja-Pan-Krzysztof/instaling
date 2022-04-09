@@ -1,11 +1,11 @@
 # INSTALING BOT 🐍
 ***
 
-#####This bot solving your daily session on [Instaling](https://instaling.pl/). It's your end of tiring typing words. It's time for that!
+##### This bot solving your daily session on [Instaling](https://instaling.pl/). It's your end of tiring typing words. It's time for that!
 
 &nbsp;
 
-###INSTALATION
+### INSTALATION
 ***
 
  - [Python 3.10.2](https://www.python.org/downloads/release/python-3102/)
@@ -28,7 +28,7 @@
   
 &nbsp;
 
-###PREPARATION
+### PREPARATION
 ***
 
 * Download this repository:
@@ -65,7 +65,7 @@
          I don't have this ~~supercomputer~~ ( This isn't computer, this is a MacBook )
 &nbsp;
    
-###USE
+### USE
 ***
 
 * Windows :
@@ -79,4 +79,4 @@
   
 &nbsp;
   
-###Thanks for use this 🐍
+### Thanks for use this 🐍
