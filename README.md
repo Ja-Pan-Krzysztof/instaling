@@ -53,8 +53,8 @@
 * Change the path in `instalingLogIn` to yours:
   * Firefox :
      ```python
-          _PATH = r'<your path to webdriver>'
-          _DRIVER = webdriver.Firefox(executable_path=_PATH)
+          _PATH = r'<your path to webdriver>'  # Line 15
+          _DRIVER = webdriver.Firefox(executable_path=_PATH)  # Line 16
     ```
   * Chrome :
      ```python
