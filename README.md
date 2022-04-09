@@ -1,7 +1,7 @@
 # INSTALING BOT 🐍
 ***
 
-##### This bot solving your daily session on [Instaling](https://instaling.pl/). It's your end of tiring typing words. It's time for that!
+##### This bot solving your daily session on [Instaling](https://instaling.pl/). It's your end of tiring typing words. It's time for Instaling Bot!
 
 &nbsp;
 
