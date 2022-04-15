@@ -90,5 +90,17 @@ words = {
     'cudowny; wspaniały': 'wonderful',
     'zabytek, historyczne miejsce': 'historic site',
     'mieć tendencję (do czegoś)': 'tend to',
-    'kurtka zimowa': 'winter coat'
+    'kurtka zimowa': 'winter coat',
+    'wybór; dobór; selekcja': 'selection',
+    'pyszny; wyborny': 'delicious',
+    'śliczny; miły; słodki': 'lovely',
+    'główna atrakcja turystyczna': 'tourist highlight',
+    'architektura': 'architecture',
+    'atrakcja; przyciąganie': 'attraction',
+    'zamek': 'castle',
+    'restauracja nad wodą': 'waterfront restaurant',
+    'rodzina królewska': 'royal family',
+    'wzgórze; pagórek': 'hill',
+    'rzeka': 'river',
+    'dorosły': 'adult'
 }
