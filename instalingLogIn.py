@@ -5,10 +5,10 @@ from words import words
 
 from time import sleep
 from random import randrange, random
-#import logging.config
+import logging.config
 
-#logging.config.fileConfig(fname='file.conf', disable_existing_loggers=True)
-#logger = logging.getLogger(__name__)
+logging.config.fileConfig(fname='file.conf', disable_existing_loggers=True)
+logger = logging.getLogger(__name__)
 
 
 class InstalingLogIn:
@@ -37,14 +37,14 @@ class InstalingLogIn:
                 return a
 
     def _parameters(self):
-        #logger.info('Loading... [ _parameters() ]')
+        logger.info('Loading... [ _parameters() ]')
         self.driver.implicitly_wait(5)
         self.username_input = self.driver.find_element(By.ID, 'log_email')
         self.password_input = self.driver.find_element(By.ID, 'log_password')
         self.button_log_in = self.driver.find_element(By.XPATH, '//button[@type="submit"]')
 
     def _account_log_in(self):
-        #logger.info('Loading... [ _account_log_in() ]')
+        logger.info('Loading... [ _account_log_in() ]')
 
         current_url = self.driver.current_url
 
@@ -58,12 +58,12 @@ class InstalingLogIn:
             self._panel_student()
 
         else:
-            #logger.error('Bad login or password')
+            logger.error('Bad login or password')
             self.driver.close()
             self.driver.quit()
 
     def _panel_student(self):
-        #logger.info('Loading... [ _panel_student() ]')
+        logger.info('Loading... [ _panel_student() ]')
         current_url = self.driver.current_url
 
         self.student_panel = self.driver.find_element(By.ID, 'student_panel')
@@ -85,7 +85,7 @@ class InstalingLogIn:
             self.driver.quit()
 
     def _solving_words(self):
-        #logger.info('Loading... [ _solving_words() ]')
+        logger.info('Loading... [ _solving_words() ]')
         num_words = 1
 
         self.translation_input = self.driver.find_element(By.ID, 'answer')
@@ -93,10 +93,11 @@ class InstalingLogIn:
         self.next_word = self.driver.find_element(By.ID, 'next_word')
 
         try:
+            a = 0
             while True:
-                #logger.info('Loop [ Try | While True ]')
+                logger.info('Loop [ Try | While True ]')
                 try:
-                    #logger.info('Loop [ Try | While True | Try ]')
+                    logger.info('Loop [ Try | While True | Try ]')
                     self.driver.find_element(By.ID, 'dont_know_new').click()
 
                     sleep(self.num())
@@ -104,17 +105,27 @@ class InstalingLogIn:
                     self.driver.find_element(By.ID, 'skip').click()
 
                 except:
-                    #logger.info('Loop [ Try | While True | Except ]')
+                    logger.info('Loop [ Try | While True | Except ]')
 
                     sleep(self.num())
+                    self.driver.implicitly_wait(20)
                     translete_words = self.driver.find_element(By.CLASS_NAME, 'translations')
                     word = words.get(translete_words.text)
+
+                    if type(word) == list:
+                        word = word[a]
+                        a += 1
+
+                        if a >= len(word):
+                            a = 0
 
                     '''if word is None:
                         new_word = str(input('Podaj odpowiedź : '))
                         self.new_word_list.append(f'{translete_words}: {new_word}')
 
                         word = new_word'''
+
+                    self.driver.implicitly_wait(20)
 
                     sleep(randrange(1, 4))
                     self.translation_input.send_keys(word)
@@ -131,17 +142,17 @@ class InstalingLogIn:
                 num_words += 1
 
         except:
-            #logger.info('not Loop [ Except ]')
+            logger.info('not Loop [ Except ]')
             try:
-                #logger.info('not Loop [ Except | Try ]')
+                logger.info('not Loop [ Except | Try ]')
                 self.driver.find_element(By.ID, 'return_mainpage').click()
 
             except:
-                #logger.info('not Loop [ Except | Except ]')
+                logger.info('not Loop [ Except | Except ]')
                 sleep(self.num())
 
             finally:
-                #logger.info('not Loop [ Except | Finally ]')
+                logger.info('not Loop [ Except | Finally ]')
                 sleep(self.num())
                 print('\n\tGratulacje ! Dzisiejsza sesja wykonana !\n')
 
