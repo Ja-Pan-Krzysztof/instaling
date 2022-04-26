@@ -73,7 +73,7 @@ words = {
     'dość szybko': 'pretty fast',
     'nie kłaść się spać': 'stay up',
     'źle': 'badly',
-    'trochę': 'a little',
+    'trochę': ['a little', 'a bit'],
     'dobrze': 'well',
     'niewiarygodnie': 'unbelievably',
     'niezwykle; niezmiernie': 'extremely',
