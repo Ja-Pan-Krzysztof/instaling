@@ -102,5 +102,12 @@ words = {
     'rodzina królewska': 'royal family',
     'wzgórze; pagórek': 'hill',
     'rzeka': 'river',
-    'dorosły': 'adult'
+    'dorosły': 'adult',
+    'odpowiedni; stosowny': 'suitable',
+    'dzienny; codzienny': 'daily',
+    'sufit': 'ceiling',
+    'ostrzegać; przestrzegać; uprzedzać': 'warn',
+    'parapetówka': 'house-warming party',
+    'prześcieradło': 'sheet',
+    'przebrać się za kogoś': 'dress up as'
 }
