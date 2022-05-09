@@ -109,5 +109,11 @@ words = {
     'ostrzegać; przestrzegać; uprzedzać': 'warn',
     'parapetówka': 'house-warming party',
     'prześcieradło': 'sheet',
-    'przebrać się za kogoś': 'dress up as'
+    'przebrać się za kogoś': 'dress up as',
+    'pochodzenie; dalszy plan; tło; przeszłość': 'background',
+    'zachęcać; popierać; namawiać; dodawać odwagi': 'encourage',
+    'stan': 'condition',
+    'źle zrozumieć; błędnie zrozumieć': 'misunderstand',
+    'robić/popełnić błąd': 'make a mistake',
+    'śmiać się z kogoś': 'make fun of',
 }
